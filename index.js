@@ -343,82 +343,97 @@
 //     return person;
 // }
 //factory function
-const user2 = {
-    name: "sajad",
-    age: 34,
-    street: "abc",
-}
+// const user2 = {
+//     name: "sajad",
+//     age: 34,
+//     street: "abc",
+// }
 
-function createUser(name, age, street) {
-    return {
-        name,
-        age,
-        street,
+// function createUser(name, age, street) {
+//     return {
+//         name,
+//         age,
+//         street,
+//     }
+// }
+// const newUser = createUser("mehdi", "25", "xxx");
+// console.log(newUser);
+// //constructor function
+// function CreateUser(name, age, street) {
+//     this.name = name;
+//     this.age = age;
+//     this.street = street;
+//     return this;
+
+// }
+// const user5 = { nationality: "IR" }
+// let NewUser = new CreateUser("ss", 12, "sss");
+// console.log(NewUser);
+// const user3 = CreateUser.apply({}, ["human", 8, "bb"]);
+// console.log(user3);
+// const user4 = CreateUser.call({}, "farhad", 44, "the");
+// console.log(user4);
+// const user6 = CreateUser.call(user5, "ali", 24, "rr");
+// console.log(user6);
+// let blog = {
+//     title: "s",
+//     subject: "poem",
+//     author: "aa",
+//     views: 20,
+//     comments: {
+//         author: "sajad",
+//         opninin: "hiiiii",
+//     },
+//     islived: true,
+// }
+// console.log(blog);
+// // document.getElementById("mytext").innerHTML = blog;
+
+// function blogPost(title, author, body) {
+//     this.title = title;
+//     this.author = author;
+//     this.body = body;
+//     this.viwes = 0;
+//     this.comments = [];
+//     this.islive = false;
+
+// }
+// let blog2 = new blogPost("n", "dd", "ss");
+// console.log(blog2);
+// const number = [{ name: "sajad", id: 1 },
+//     { name: "amir", id: 2 }
+// ];
+
+// const selectedItem = number.findIndex(function(select) {
+//     if (select.id === 2) return select;
+// })
+// console.log(selectedItem);
+// document.getElementById("mytext").innerHTML = selectedItem;
+
+// const numbers = [1, 2, 3, 4, 5];
+// const p = numbers.push("ss");
+
+// document.getElementById("mytext").innerHTML = numbers;
+// const d = numbers.pop();
+// document.getElementById("mytext").innerHTML = numbers;
+// const s = numbers.shift()
+// document.getElementById("mytext").innerHTML = numbers;
+// const ws = numbers.unshift("44");
+// document.getElementById("mytext").innerHTML = numbers;
+// const ee = numbers.splice(1, 1, "rr", 7);
+// document.getElementById("mytext").innerHTML = numbers;
+// const a=[1,2,3,4];
+
+// console.log(a.indexOf(1));
+
+ const numbers=[1,2,3,4,5];
+
+function includes(array,searchEl){
+    for (let index of array) {
+        if(index===searchEl) return true;
+        return false;
     }
+    
 }
-const newUser = createUser("mehdi", "25", "xxx");
-console.log(newUser);
-//constructor function
-function CreateUser(name, age, street) {
-    this.name = name;
-    this.age = age;
-    this.street = street;
-    return this;
-
-}
-const user5 = { nationality: "IR" }
-let NewUser = new CreateUser("ss", 12, "sss");
-console.log(NewUser);
-const user3 = CreateUser.apply({}, ["human", 8, "bb"]);
-console.log(user3);
-const user4 = CreateUser.call({}, "farhad", 44, "the");
-console.log(user4);
-const user6 = CreateUser.call(user5, "ali", 24, "rr");
-console.log(user6);
-let blog = {
-    title: "s",
-    subject: "poem",
-    author: "aa",
-    views: 20,
-    comments: {
-        author: "sajad",
-        opninin: "hiiiii",
-    },
-    islived: true,
-}
-console.log(blog);
-// document.getElementById("mytext").innerHTML = blog;
-
-function blogPost(title, author, body) {
-    this.title = title;
-    this.author = author;
-    this.body = body;
-    this.viwes = 0;
-    this.comments = [];
-    this.islive = false;
-
-}
-let blog2 = new blogPost("n", "dd", "ss");
-console.log(blog2);
-const number = [{ name: "sajad", id: 1 },
-    { name: "amir", id: 2 }
-];
-
-const selectedItem = number.findIndex(function(select) {
-    if (select.id === 2) return select;
-})
-console.log(selectedItem);
-document.getElementById("mytext").innerHTML = selectedItem;
-
-const numbers = [1, 2, 3, 4, 5];
-const p = numbers.push("ss");
-
-document.getElementById("mytext").innerHTML = numbers;
-const d = numbers.pop();
-document.getElementById("mytext").innerHTML = numbers;
-const s = numbers.shift()
-document.getElementById("mytext").innerHTML = numbers;
-const ws = numbers.unshift("44");
-document.getElementById("mytext").innerHTML = numbers;
-const ee = numbers.splice(1, 1, "rr", 7);
-document.getElementById("mytext").innerHTML = numbers;
+console.log(includes(numbers,1));
+document.getElementById("mytext").innerHTML=includes(numbers,3);
