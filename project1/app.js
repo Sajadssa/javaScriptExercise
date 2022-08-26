@@ -57,7 +57,7 @@ showModalBtn.addEventListener("click",()=>{
 
 confrimModal.addEventListener("click",()=>{
     modal.style.opacity = "0";
-alert("سلام طاها");
+alert(" hi world!");
 });
 
  function closeModalFunction(){
