@@ -5,6 +5,8 @@
 }
 
 body {
+  width: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,11 +16,10 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
     object-fit: cover;
-    
-    
-         
-  
+
 }
+
+
 .container{
     margin-top: 2rem;
     border-radius: 2.5rem;
@@ -34,9 +35,35 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0 45px 40px 0 rgba( 31, 38, 135, 0.37 );
-    
+    margin-bottom: 1rem;
     
 }
+
+.backdrop{
+  background-color: rgba(17, 25, 40, 0.58);
+  position: fixed;
+  top:0;
+  left:0;
+  display: none;
+  z-index: 5;
+  
+}
+
+.modal{
+  z-index: 10;
+  width: 20rem;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 25px 45px 40px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: -100vh;
+}
+
 
 .emoji {
   font-size: 10rem;
