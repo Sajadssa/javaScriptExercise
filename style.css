@@ -1,0 +1,11 @@
+p {
+    background-color: green;
+    height: max-content;
+    color: aqua;
+}
+
+h2 {
+    background-color: #fff;
+    height: 12rem;
+    width: 10rem;
+}
