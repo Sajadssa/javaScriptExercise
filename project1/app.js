@@ -13,9 +13,9 @@ closedFace.addEventListener("click", () => {
         containrs.style.boxShadow = "0 25px 32px 0 yellow";
         body.style.backgroundImage = "url('https://media.istockphoto.com/photos/sunflare-on-road-picture-id94502345')";
         p.textContent = 'Good Morning';
-        p.style.fontSize="30px";
-        p.style.color="yellow";
-        p.style.top="10px";
+        p.style.fontSize = "30px";
+        p.style.color = "yellow";
+        p.style.top = "10px";
         p.style.fontWeight = "700";
         containrs.appendChild(p);
     }
@@ -31,7 +31,7 @@ opendFace.addEventListener("click", () => {
         p.textContent = 'Good Night';
         p.style.fontSize = "30px";
         p.style.color = "blue";
-        p.style.fontWeight="700";
+        p.style.fontWeight = "700";
         containrs.appendChild(p);
 
 
