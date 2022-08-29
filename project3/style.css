@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   height: 100vh;
+
+}
+
+#circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:100px;
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    from{
+        rotate: 360deg;
+    }
+    to{
+        transform-style: preserve-3d;
+    }
+    
+}
+
+.hover{
+    transform:scale(2);
+}

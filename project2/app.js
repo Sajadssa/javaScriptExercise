@@ -11,9 +11,15 @@ let data = [
 
 ];
 
-// const info=document.querySelector("#info");
 
-// let details=data.map()
+let details=data.map(function(item){
+
+return'<div>'+item.name +' is'+' '+ item.age +' '+ "year's old" +'</div>';
+  
+
+});
+console.log(details);
+info.innerHTML=details.join('\n');
 
 // const students = [
 //     { name: "Ali Rafati", class: "A1", birth_year: 1995 },

@@ -1,3 +1,3 @@
-# javaScriptExcersize
+# javaScriptExercize
 
-Done Excersize JavaScript 
+Done Exercize JavaScript 

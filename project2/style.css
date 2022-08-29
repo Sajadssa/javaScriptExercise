@@ -15,3 +15,18 @@ body{
    height: 100vh;
 
 }
+
+#info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#info div{
+    padding: 3rem;
+    background-color:rgb(9,60,227);
+    margin: .5rem;
+    border-radius: 10px;
+    font-size:1.2rem ;
+    text-align: center;
+    color: white;
+}
