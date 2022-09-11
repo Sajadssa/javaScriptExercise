@@ -28,7 +28,7 @@ body{
     cursor: pointer;
     font-size: 1.2rem;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
-    animation: rotate 2s infinite linear;
+    animation: rotate .5s infinite linear;
 }
 @keyframes rotate {
     from{
