@@ -1,0 +1,131 @@
+:root{
+    --primary-color:hsla(0, 0%, 100%, 0.918);
+    --body-color:hsla(240, 100%, 50%, 0.1);
+    --second-color:hsla(248, 23%, 74%, 0.9);
+    --font-color:hsla(240, 100%, 50%, 1);
+
+}
+
+/*========== Variables Dark theme ==========*/
+
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline-style: 0;
+}
+
+body {
+  line-height: 1.4;
+  background-color: var(--body-color);
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 23rem;
+  height: 29rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 2px 8px 32px 2px rgba(60, 70, 184, 0.37);
+  background-color: white;
+ 
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-left: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 0.8rem;
+}
+.title {
+  color: rgba(5, 83, 57, 0.534);
+  font-size: 1.1rem;
+}
+.fa-moon{
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    margin-left: 1rem;
+}
+img {
+  width: 105px;
+  height: 110px;
+  margin-top: 1rem;
+}
+.circle{
+    
+   content: "";   
+    position: absolute;
+    width:107px; 
+    height: 111px;
+    border-radius: 50%;
+    top: 3.2rem;
+    left: 38%; 
+    
+    background-color: var(--body-color);
+ 
+   transform:translateX(-50%,50%); 
+ 
+   box-shadow: hsla(240, 100%, 50%, 0.1);
+}
+.fa-code{
+    position: absolute;
+    top: -.5rem;
+color: var(--second-color);
+}
+
+
+#author {
+  color: var(--font-color);
+  padding-bottom: 0.5rem;
+}
+#job {
+  color: var(--second-color);
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+.desc {
+  font-size: 14px;
+  word-wrap: break-word;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  /* From https://css.glass */
+background-color:var(--body-color);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+ 
+
+  
+}
+.button-container {
+  padding-bottom: 0.5rem;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  border: none;
+  margin: 0 1rem;
+  color: var(--font-color);
+}
+
+.random-btn{
+  background-color:var(--second-color);
+  border: none;
+  margin: 0 auto;
+  color: var(--font-color);
+  padding: .8rem;
+  border-radius: 1rem;
+}
+
+ 
