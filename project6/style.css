@@ -1,7 +1,7 @@
 :root{
-    --primary-color:hsla(0, 0%, 100%, 0.918);
-    --body-color:hsla(240, 100%, 50%, 0.1);
-    --second-color:hsla(248, 23%, 74%, 0.9);
+    --primary-color:hsla(0, 50%, 23%, 0.918);
+    --body-color:hsla(229, 13%, 53%, 0.1);
+    --second-color:hsla(231, 10%, 59%, 0.9);
     --font-color:hsla(240, 100%, 50%, 1);
 
 }
@@ -31,8 +31,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 23rem;
-  height: 29rem;
+width: 23rem;
+  height:26rem;
   text-align: center;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -57,6 +57,8 @@ img {
   width: 105px;
   height: 110px;
   margin-top: 1rem;
+  border-radius: 50%;
+  
 }
 .circle{
     
@@ -92,11 +94,11 @@ color: var(--second-color);
 }
 .desc {
   font-size: 14px;
-  word-wrap: break-word;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ 
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 1rem;
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  height: min-content;
   /* From https://css.glass */
 background-color:var(--body-color);
 border-radius: 16px;
@@ -118,6 +120,10 @@ backdrop-filter: blur(5px);
   margin: 0 1rem;
   color: var(--font-color);
 }
+.prev-btn,
+.next-btn:hover{
+  border: 1px solid var(--second-color);
+}
 
 .random-btn{
   background-color:var(--second-color);
@@ -127,5 +133,7 @@ backdrop-filter: blur(5px);
   padding: .8rem;
   border-radius: 1rem;
 }
+
+
 
  
