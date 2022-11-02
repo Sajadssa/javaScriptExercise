@@ -1,11 +1,82 @@
 * {
-    box-sizing: border-box;
-    outline: none;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(29, 29, 38);
+  background-position: center;
+  position: relative;
+}
+span {
+  position: absolute;
+  top: -1.5rem;
+  color: wheat;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.counterValue {
+  position: absolute;
+  top: 4.5rem;
 }
 
-p {
-    background-color: aquamarine;
-    align-content: ;
+.counter {
+  width: 15rem;
+  border: 1px solid gainsboro;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 9px 50px rgba(0, 41, 78, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  height: 2rem;
+  width: 20rem;
+  outline: none;
+  border: 1px solid gray;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 45px 0 rgba(31, 141, 256, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.counter:active {
+  box-shadow: 0 50px 45px 0 rgba(31, 141, 256, 0.37);
+  backdrop-filter: blur(4px);
+}
+
+.btn:hover {
+  content: "";
+  background: rgba(0, 12, 10, 0.25);
+  box-shadow: 0 15px 45px 0 rgba(31, 141, 256, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  animation: change-color 2s ease 0s infinite alternate;
+  transition: 1s;
+}
+
+@keyframes change-color {
+  0% {
+    background-color: rgb(71, 76, 124);
+    transform: translateY(5px);
+  }
+  100% {
+    background-color: rgb(48, 123, 161);
+    transform: translateY(-5px);
+  }
 }

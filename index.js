@@ -2,6 +2,8 @@
 // for (i = 0; i <= 5; i++) {
 //     console.log("this is number", i);
 
+// const { t } = require("tar");
+
 // }
 // let i = 0;
 // while (i <= 5) {
@@ -248,8 +250,8 @@
 // let y = x;
 // x = 12;
 // console.log(x, y);
-// //if changes x then y is const because only 
-// //change value x and permeative type dont allow 
+// //if changes x then y is const because only
+// //change value x and permeative type dont allow
 // //change y
 // //reference type
 // const user = { name: "sajad", age: 34 }
@@ -257,7 +259,7 @@
 // user2.name = "ali";
 // user2.email = "sajadsaeediazad0007@gmail.com"
 // console.log(user2); //when copeid from user with user2
-// //such as copy address user to user2 
+// //such as copy address user to user2
 // //and make changes value property name in user
 // //enumerating object:
 
@@ -426,14 +428,284 @@
 
 // console.log(a.indexOf(1));
 
- const numbers=[1,2,3,4,5];
+//  const numbers=[1,2,3,4,5];
 
-function includes(array,searchEl){
-    for (let index of array) {
-        if(index===searchEl) return true;
-        return false;
-    }
-    
+// function includes(array,searchEl){
+//     for (let index of array) {
+//         if(index===searchEl) return true;
+//         return false;
+//     }
+
+// }
+// console.log(includes(numbers,1));
+// document.getElementById("mytext").innerHTML=includes(numbers,3);
+
+// const m="hi"
+// if(true){
+//     console.log(m);
+// }
+
+// function sayHi(){
+//     for(let i=0;i<5;i++){
+//         console.log(i);
+//         let userName="sajad";
+//         if(i>3){
+//             console.log("i is:",i);
+//             console.log(userName);
+//         }
+
+//     }
+// }
+//  sayHi();
+
+//  function getRectArea(width, height) {
+//   if (isNaN(width) || isNaN(height)) {
+//     throw 'Parameter is not a number!';
+//   }
+// }
+
+// try {
+//   getRectArea(3, 'A');
+// } catch (e) {
+//   console.error(e);
+//   // expected output: "Parameter is not a number!"
+// }
+// let a = 10;
+//     function f() {
+//         let b = 9
+//         console.log(b);
+//         console.log(a);
+//     }
+//     f();
+//     const user={
+//         name:"sajad", age:34,
+//        f(){
+//             console.log(this);
+
+//         }
+
+//     }
+// user.f();
+
+// function Constructors(title){
+//     this.title=title;
+//     console.log(this);
+// }
+// const C1=new Constructors("SSA");
+
+// const user={
+//     name:"sajad",
+//     age:34,
+//  colors:["red","blue","green"],
+//     f(){
+// // console.log(this);
+// this.colors.forEach(function(color){
+// console.log(this);
+// },this.name)
+//     }
+
+// }
+// user.f();
+// const storTitle=document.getElementById("sajad");
+// console.log(storTitle);
+
+// const productStor=document.getElementsByClassName("product");
+// console.log(productStor);
+// const storTitle=document.getElementsByTagName("h2");
+// console.log(storTitle);
+// const storTitle=document.querySelectorAll('p')
+// console.log(storTitle);
+// storTitle.forEach((item)=>{
+//     console.log(item);
+//     // item.remove();
+//     // item.textContent='hi how is it going?...';
+//     // const removeTag=item.remove('js');
+//     //textContent is property an item
+// })
+// storTitle.textContent='HOW ARE YOU';
+// storTitle.style.background='rgba(120,142,250,.5)';
+// storTitle.remove();
+// const tagElm=document.querySelectorAll('p');
+// console.log(tagElm);
+// tagElm.forEach((item)=>{
+// if(item.textContent.toLocaleLowerCase().includes('js')){
+//     item.remove();
+// }
+// })
+// const pTags=document.createElement('p');
+// pTags.textContent='React COURSE';
+
+// document.querySelector('#root').appendChild(pTags);
+
+// // add the text node to the newly created div
+
+// const para = document.createElement("p");
+// para.innerText = "This is a paragraph";
+// document.body.appendChild(para);
+
+// const productsMahsol=[
+//     {title:"a",isExist:true},
+//     {title:"b",isExist:true},
+//     {title:"c",isExist:false},
+//     {title:"d",isExist:true},
+//     {title:"e",isExist:false},
+
+// ];
+
+// //1.calculation is true product
+// //2.show products
+// const body=document.querySelector('body');
+// const avlibleCourse=productsMahsol.filter((c)=>c.isExist);
+// const msg=document.createElement('h3');
+// msg.textContent=`number of avaliable: ${avlibleCourse.length}`;
+// body.appendChild(msg);
+
+// avlibleCourse.forEach((c) => {
+//     const p=document.createElement('p');
+//     p.textContent=c.title;
+//     body.appendChild(p);
+
+// });
+
+// const productBtn=document.querySelector('#btn');
+
+// const prodcutEven=productBtn.addEventListener('click',(e)=>{
+//     console.log(e.target );
+//     // productBtn.textContent='clicked';
+// })
+// const paraTags = document.querySelectorAll(".product");
+// const removeBtn = document.querySelector('#rembtn');
+
+// removeBtn.addEventListener("click",(e)=>{
+//     console.log(e.target);
+//    paraTags.forEach((item)=>{
+//     item.remove();
+//     alert('remove an items to be successful')
+//    })
+// });
+
+// const tagInput=document.querySelector('#input');
+// tagInput.addEventListener('input',(e)=>{
+//     console.log(e.target.value);
+// })
+
+const searchProduct = document.querySelector("#search-product");
+const divProducts = document.querySelector("#product");
+
+const products = [
+  { title: "node js course" },
+  { title: "React js course" },
+  { title: "javascript js course" },
+  { title: "express js course" },
+  { title: "next js course" },
+];
+
+const filters = {
+  searchItem: "",
+};
+
+function renderProducts(_products, _filters) {
+  const filterProducts = _products.filter((item) => {
+    return item.title.toLowerCase().includes(_filters.searchItem.toLowerCase());
+  });
+  divProducts.innerHTML = "";
+  filterProducts.forEach((element) => {
+    const p = document.createElement("p");
+    p.textContent = element.title;
+    divProducts.appendChild(p);
+  });
+
+  //     console.log(filterProducts);
 }
-console.log(includes(numbers,1));
-document.getElementById("mytext").innerHTML=includes(numbers,3);
+
+renderProducts(products, filters);
+searchProduct.addEventListener("input", (e) => {
+  filters.searchItem = e.target.value;
+  renderProducts(products, filters);
+});
+
+// const p=document.createElement('p');
+// const body=document.querySelector('body');
+// const input = document.querySelector('#input');
+
+// input.addEventListener('input',(e)=>{
+//     console.log(e.target.value);
+// });
+
+//1.products
+//2. filter
+//3.how to filter
+//4.add to do
+
+// counter ... when click each button occur event
+// first Define Variable
+// use of addeventLister method for each button
+// action within Buttons
+
+const buttons = document.querySelectorAll(".btn");
+const counterValue = document.querySelector(".counterValue");
+const counters = document.querySelector("counter");
+// const BtnDecrement = document.querySelector(".decrement");
+// const BtnRest=document.querySelector(".rest");
+
+buttons.forEach((btn) => {
+  // console.log(btn);
+
+  btn.addEventListener("click", () => {
+    // classlist
+    const classList = btn.classList;
+    //  console.log(classList.contains("increment"));//output is true or false
+    if (classList.contains("increment")) count++;
+    else if (classList.contains("decrement")) count--;
+    else count = 0;
+
+    if (count > 0) {
+      counterValue.style.color = "white";
+      document.querySelector(".counter").style.boxShadow =
+        "10px 20px 30px green";
+    } else if (count < 0) {
+      counterValue.style.color = "white";
+      document.querySelector(".counter").style.boxShadow = "10px 20px 30px Red";
+    } else {
+      counterValue.style.color = "White";
+      document.querySelector(".counter").style.boxShadow =
+        "10px 20px 30px blue";
+    }
+
+    counterValue.textContent = count;
+  });
+});
+
+let count = 0;
+
+//  function incFunction(){
+//     count++;
+//     counterValue.textContent=count;
+
+//  }
+
+//  function decFunction(){
+//     count--;
+//     counterValue.textContent=count;
+
+//  }
+
+//  function changeColor(){
+//     document.body.style.color="green";
+//     return false;
+//  }
+
+//  function resFunction(){
+//     count=0;
+//     counterValue.textContent=count;
+//  }
+
+// BtnIncrement.addEventListener("click",incFunction);
+// BtnDecrement.addEventListener("click",decFunction);
+// BtnRest.addEventListener("click",resFunction);
+
+// console.log(BtnIncrement);
+
+// console.log(counterValue.textContent);
+
+

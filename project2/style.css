@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  
+}
+ 
+
+.form-container {
+  background-color: rgba(175, 179, 194, 0.74);
+  display: block;
+  width: 30rem;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0 2px 3px 1px rgba(175, 179, 194, 0.74),
+    0 7px 21px rgba(45, 68, 75, 0.6);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 13px;
+  z-index: -1;
+}
+
+
+label::selection{
+    color: rgb(31, 177, 177);
+}
+
+
+ 
+label > .cnt-input {
+     
+  margin-left: 1rem;
+  padding: 0.3rem;
+  border-radius: 10px;
+  width: 12rem;
+  border: none;
+  transition: width 1s;
+  outline: none;
+  
+  border-bottom: 2px solid #0076ff;
+}
+ 
+.cnt-input:last-child {
+  margin-bottom: 0;
+}
+
+input[type="submit"] {
+  border-radius: 5px;
+  background-color: rgba(21, 35, 158, 0.712);
+  color: wheat;
+  margin: 0 auto;
+   width: 10rem;
+  outline: none;
+  border: none;
+ transition: .5s;
+ font-size: 12px;
+ margin-top: .6rem;
+box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.74),0 7px 21px 0 rgba(0, 0, 0, 0.4);
+}
+.cnt-input:hover{
+    width: 15rem;
+    height: 2rem;
+}
+.cnt-input:hover::placeholder,
+textarea::placeholder{
+    color: aquamarine;
+
+}
+
+textarea{
+    border-radius: 10px;
+    margin: 0 auto;
+     
+}
+
+textarea:focus,.cnt-input:focus{
+    background-color: rgba(5, 3, 29, 0.719);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.74),0 7px 21px 0 rgba(0, 0, 0, 0.4);
+}
+
+input[type="submit"]:hover{
+box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.74),0 7px 21px 0 rgba(0, 0, 0, 0.4);
+background-color: rgba(0, 14, 54, 0.623);
+}
