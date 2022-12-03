@@ -4,18 +4,16 @@ const cartBtn = document.querySelector(".cart-btn");
 const cartModal = document.querySelector(".carts");
 const backDrop = document.querySelector(".backdrop");
 const closeModal = document.querySelector(".cart-item-confirm");
-
+const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".cart");
 
-const cartTotal = document.querySelector(".cars-total");
+const cartTotal = document.querySelector(".cart-total");
 
-const cartItems = document.querySelector(".carts-item");
-
+const cartItems = document.querySelector(".cart-items");
+const clearCartBtn = document.querySelector(".clear-cart");
 let cart = [];
 
 // const showModal = document.querySelector('.show-modal');
-
- 
 
 //for understand shopping cart we defines empty an array
 // console.log(addtocartBtns);
@@ -37,7 +35,7 @@ import { productsData } from "./products.js";
 //ok let's started
 
 class Products {
-   getProducts() {
+  getProducts() {
     // get from api and point!
     // when calling this method thats time loaded web browser
     return productsData;
@@ -49,6 +47,7 @@ class Products {
 //for show class products we can defines class UI
 
 class UI {
+
   //take div  thats introduce products from html and iterate forEach loop on each items  are that productsdata
 
   //but we must dynamic img src ,id,product name and price
@@ -70,17 +69,15 @@ class UI {
       </div>`;
       //we should append this result to div thats parents div here name is  div with classes name cart
       productsDOM.innerHTML = result;
-      
     });
   }
 
   //we can defines method for access to buttons
 
-  getAddtocartBtns() {
-    const addtocartBtns = document.querySelectorAll(".add-to-cart");
+  getAddToCartBtns() {
+    const addToCartBtns = document.querySelectorAll(".add-to-cart");
 
-    const buttons = [...addtocartBtns];
-
+    const buttons = [...addToCartBtns];
 
     buttons.forEach((btn) => {
       // first take id from buttons
@@ -92,7 +89,7 @@ class UI {
       // for doing this thing we use of the "FIND()" Method
       //find method telling us that whether product id in cart equal to product id when user clicked
 
-      const isInCart = cart.find((p) => p.id === id);
+      const isInCart = cart.find((p) => p.id === parseInt(id));
       if (isInCart) {
         btn.innerText = "In Cart";
         btn.disabled = true;
@@ -138,7 +135,6 @@ class UI {
         this.setCartValue(cart);
         //that added user to dom should be set
         this.addCartItem(addedProduct);
-
       });
     });
     // With use of the forEach Method when reloaded web browser we checked that which id exist in cart or not
@@ -149,55 +145,6 @@ class UI {
     //now we should be convert NodeList to an array and is the best way use of spread operators
     // console.log(addtocartBtns);
   }
-
-  getCartBtns() {
-    const addToCartBtns = [...document.querySelectorAll(".add-to-cart")];
-    buttonsDOM = addToCartBtns;
-    addToCartBtns.forEach((btn) => {
-      const id = btn.dataset.id;
-      const isInCart = cart.find((item) => item.id === id);
-      if (isInCart) {
-        btn.innerText = "In Cart";
-        btn.disabled = true;
-      }
-      btn.addEventListener("click", (event) => {
-        event.target.innerText = "In Cart";
-        event.target.disabled = true;
-        // 1. get product from products
-        const addedProduct = { ...Storage.getProduct(id), quantity: 1 };
-
-        // 2. add product to cart
-        cart = [...cart, addedProduct];
-        // 3. save cart in local storage
-        Storage.saveCart(cart);
-        // 4. set cart values
-        this.setCartValue(cart);
-        // 5. display cart item
-        this.addCartItem(addedProduct);
-        // 6. show the cart
-      });
-    });
-  }
-  //define method
-
-  // setCartValue(cart) {
-  //   // 1. cart items
-
-  //   //2 . total price
-
-  //   //we can use Reduce method for computing cart item and total price
-  //   let tempCartItems = 0;
-  //   const totalPrice = cart.reduce((acc, curr) => {
-  //     tempCartItems += curr.quantity; //2
-  //     return acc + curr.quantity * curr.price;
-  //   }, 0);
-  //   cartTotal.innerText = `TotalPrice : ${totalPrice} $`;
-  //   // console.log(cartTotal);
-  //   cartItems.innerText = tempCartItems;
-  //   showModal.innerText = tempCartItems;
-  //   // console.log(tempCartItems);
-  // }
-
   setCartValue(cart) {
     let tempCartItems = 0;
     const totalPrice = cart.reduce((acc, curr) => {
@@ -209,34 +156,13 @@ class UI {
     )} $`;
     cartItems.innerText = tempCartItems;
   }
-  // addCartItem(cartItem) {
-  //   //create second div for add to new product in cart
-  //   const div = document.createElement('div');
-  //   div.classList.add('.carts-item');
-  //   div.innerHTML = ` <div class="carts-item">
-  //         <img class="carts-item-img" src=${cartItem.imageUrl} />
-  //         <div class="carts-item-desc">
-  //           <h4>${cartItem.name}</h4>
-  //           <h5>${cartItem.price}</h5>
-  //         </div>
-  //         <div class="carts-item-controller">
-  //           <button class="btn up">+</button>
-  //           <p>${cartItem.quantity}</p>
-  //           <button class="btn down">-</button>
-  //         </div>
-  //       </div>`;
-
-  //   //we add to carts-content this new div that show new product
-  //   cartContent.appendChild(div);
-
-  // }
 
   addCartItem(cart) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
     div.innerHTML = `<div><img class="cart-item-img" src=${cart.imageUrl} /></div>
  <div class="cart-item-desc">
-   <h4>${cart.title}</h4>
+   <h4>${cart.name}</h4>
    <h5>$ ${cart.price}</h5>
  </div>
  <div class="cart-item-controller">
@@ -244,11 +170,99 @@ class UI {
    <p class="item-quantity">${cart.quantity}</p>
    <i class="fas fa-chevron-down" data-id=${cart.id}></i>
  </div>
- <i class="fas fa-trash remove-item" data-id=${cart.id}></i>
+ <i class="fas fa-trash-alt remove-item" data-id=${cart.id}></i>
  `;
     cartContent.appendChild(div);
   }
+  setupApp() {
+     cart = Storage.getCart()||[];
+     cart.forEach((cartItem)=>this.addCartItem(cartItem));
+    this.setCartValue(cart);
+    
+  }
+  cartLogic() {
+    // clear cart button
+    clearCartBtn.addEventListener("click", () => {
+      this.clearCart();
+    });
+
+    // cart functionality
+    cartContent.addEventListener("click", (event) => {
+      if (event.target.classList.contains("remove-item")) {
+        const removeItem = event.target;
+        const id = removeItem.dataset.id;
+        console.log(id);
+        // remove from DOM :
+        // console.log(removeItem.parentElement);
+        
+        cartContent.removeChild(removeItem.parentElement);
+
+        // remove item from cart not DOM !
+        this.removeItem(id);
+      } else if (event.target.classList.contains("fa-chevron-up")) {
+        const addQuantity = event.target;
+        const id = addQuantity.dataset.id;
+        const addedItem = cart.find((c) => c.id == id);
+        addedItem.quantity++;
+        // update storage
+        Storage.saveCart(cart);
+        // update total price
+        this.setCartValue(cart);
+        // update item quantity :
+        // console.log(addQuantity.nextElementSibling);
+        addQuantity.nextElementSibling.innerText = addedItem.quantity;
+      } else if (event.target.classList.contains("fa-chevron-down")) {
+        const subQuantity = event.target;
+        const id = subQuantity.dataset.id;
+        const substractedItem = cart.find((c) => c.id == id);
+
+        if (substractedItem.quantity === 1) {
+          this.removeItem(id);
+          cartContent.removeChild(subQuantity.parentElement.parentElement);
+          return;
+        }
+
+        substractedItem.quantity--;
+        // update storage
+        Storage.saveCart(cart);
+        // update total price
+        this.setCartValue(cart);
+        // update item quantity :
+        // console.log(subQuantity.nextElementSibling);
+        subQuantity.previousElementSibling.innerText = substractedItem.quantity;
+      }
+    });
+  }
+
+
+  clearCart() {
+    // loop on all the item and tigger remove for each one
+    cart.forEach((item) => this.removeItem(item.id));
+    // console.log(cartContent.children[0]);
+    while (cartContent.children.length) {
+      cartContent.removeChild(cartContent.children[0]);
+    }
+    closeModalFunction();
+  }
+
+  removeItem(id) {
+    // resuable method for signle remove and clear all
+    cart = cart.filter((cartItem) => cartItem.id !== id);
+    this.setCartValue(cart);
+    Storage.saveCart(cart);
+    // const button = this.getSingleButton(id);
+    // button.disabled = false;
+  //   button.innerHTML = `<i class="fas fa-shopping-cart"></i>
+  //  add to cart`;
+  }
+  
+  // getSingleButton(id) {
+  //   // should be parseInt to get correct result
+  //   return buttonsDOM.find((btn) => parseInt(btn.dataset.id) === parseInt(id));
+  // }
 }
+
+
 
 // 3.save local storage
 
@@ -301,6 +315,12 @@ class Storage {
       ? JSON.parse(localStorage.getItem("cart"))
       : [];
   }
+
+  static getCart() {
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+  }
 }
 
 // get productsdata when loaded dom we must show UI For users
@@ -318,11 +338,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // And  we callback displayProducts method
   const ui = new UI();
   ui.displayProducts(productsData);
+  // set up already added cart items
+  ui.setupApp();
   //products added to displayProducts class
   // now we can access to buttons
-  ui.getAddtocartBtns();
-
-  Storage.saveProducts(productsData);
+  ui.getAddToCartBtns();
+   Storage.saveProducts(productsData);
+  ui.cartLogic();
 });
 
 //4 . we should specified the products which user clicked button product and we compare this button to all buttons in local storage if id cart was exist in local storage does not need to add to cart
@@ -335,12 +357,10 @@ document.addEventListener("DOMContentLoaded", () => {
 //show modal=>click=>
 //opacity=>1;backdrop=>block
 
-
 function showModalFunction() {
   backDrop.style.display = "block";
   cartModal.style.opacity = "1";
   cartModal.style.top = "20%";
-
 }
 
 function closeModalFunction() {
@@ -353,16 +373,11 @@ cartBtn.addEventListener("click", showModalFunction);
 closeModal.addEventListener("click", closeModalFunction);
 backDrop.addEventListener("click", closeModalFunction);
 
-
 // confrimModal.addEventListener("click", () => {
 //   modal.style.opacity = "0";
 //   alert(" hi world!");
 // });
 
-
 // closeModal.addEventListener("click", closeModalFunction);
 
-
-
 //for make models any thing that exist at reality world in computer we need to class that thing
-
