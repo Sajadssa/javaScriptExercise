@@ -39,7 +39,8 @@ function getDetailCourses(id) {
 
 
         setTimeout(() => {
-            resolve("title is react");
+            // resolve("title is react");
+            reject(new Error ("this in an error"));
     
     
         }, 1000);
@@ -48,10 +49,10 @@ function getDetailCourses(id) {
 }
 
 //consume promise for above example
-loginUser("sajad@ex.com",1234)
-.then((user)=>getUserCourses(user.email))
-.then((courses=>getDetailCourses(courses[0])))
-.then((detail)=>console.log(detail));
+// loginUser("sajad@ex.com",1234)
+// .then((user)=>getUserCourses(user.email))
+// .then((courses=>getDetailCourses(courses[0])))
+// .then((detail)=>console.log(detail));
 
 // const user= loginUser("sajadex@gmail.com",1234,(user)=>{
 // console.log(user.email);
@@ -100,3 +101,35 @@ console.log('end');
 // promise
 //     .then((data) => console.log(data))
 //     .catch((error) => console.log(error.message));
+
+//async await
+//1.first expression function
+//  async function getCourseDetail(){
+//     const user=await loginUser({email:"sajad@gmail.com"});
+//     console.log(user);
+//     const courses = await getUserCourses(user.email);
+//     console.log(courses);
+//     const detail=await getDetailCourses(courses[0]);
+// console.log(detail);
+//  }
+//  getCourseDetail();
+
+ //1.arrow function async await
+ //2.error handling in async-await
+ const getCourseDetail=async()=>{
+    try {
+        const user=await loginUser({email:"sajad@gmail.com"});
+        console.log(user);
+        const courses = await getUserCourses(user.email);
+        console.log(courses);
+        const detail=await getDetailCourses(courses[0]);
+    console.log(detail);
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+
+ }
+ getCourseDetail();
+
+ 
