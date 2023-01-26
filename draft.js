@@ -132,4 +132,44 @@ console.log('end');
  }
  getCourseDetail();
 
+ //112.fetch api-axios-saheb mohammadi
+ const getBtn=document.querySelector(".get-data");
+ const postBtn=document.querySelector(".post-data");
+
+ //function declaration
+ function getData(){
+    fetch("https://jsonplaceholder.typicode.com/users").then(response=>{
+        // console.log(response.userData);
+        return response.json();
+    }).then(data=>console.log(data));
+ }
+
+ //post data to backend
+
+ function postData(){
+    //1.define data 
+    const userData = {
+        id:1,
+        name:"sajad",
+        username:"sajadssa",
+        email:"sajad@gmail.com",
+    }
+
+    fetch("https://jsonplaceholder.typicode.com/users",
+    {method:"POST",
+body:JSON.stringify(userData),
+headers:{"content-type":"application/json"}
+}).
+then((response)=>{return response.json()}).
+then(data=>console.log(data));
+   
+
+
+ }
+
+
+
+ getBtn.addEventListener("click",getData);
+ postBtn.addEventListener("click",postData);
+
  
