@@ -159,14 +159,15 @@ axios.get('https://jsonplaceholder.typicode.com/users').then
         email:"sajad@gmail.com",
     }
 
-    fetch("https://jsonplaceholder.typicode.com/users",
-    {method:"POST",
-body:JSON.stringify(userData),
-headers:{"content-type":"application/json"}
-}).
-then((response)=>{return response.json()}).
-then(data=>console.log(data));
-   
+//     fetch("https://jsonplaceholder.typicode.com/users",
+//     {method:"POST",
+// body:JSON.stringify(userData),
+// headers:{"content-type":"application/json"}
+// }).
+// then((response)=>{return response.json()}).
+// then(data=>console.log(data));
+axios.post('https://jsonplaceholder.typicode.com/users',userData).then
+(res=>console.log(res.data));
 
 
  }
@@ -181,7 +182,7 @@ function deleteUser(){
     //     return response.json();
     // }).then(data=>console.log(data));
 //axios
-axios.get('https://jsonplaceholder.typicode.com/users/1').then
+axios.delete('https://jsonplaceholder.typicode.com/users/1').then
 (res=>console.log(res.data));
     
  }
@@ -200,14 +201,15 @@ axios.get('https://jsonplaceholder.typicode.com/users/1').then
         headers:'authorization:'`${token}`
     }
 
-    fetch("https://jsonplaceholder.typicode.com/users/1",
-    {method:"POST",
-body:JSON.stringify(userData),
-headers
-}).
-then((response)=>{return response.json()}).
-then(data=>console.log(data));
-   
+//     fetch("https://jsonplaceholder.typicode.com/users/1",
+//     {method:"POST",
+// body:JSON.stringify(userData),
+// headers
+// }).
+// then((response)=>{return response.json()}).
+// then(data=>console.log(data));
+axios.put('https://jsonplaceholder.typicode.com/users/1',headers).then
+(res=>console.log(res.data));
 
 
  }
