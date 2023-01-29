@@ -138,10 +138,14 @@ console.log('end');
 
  //function declaration
  function getData(){
-    fetch("https://jsonplaceholder.typicode.com/users").then(response=>{
-        // console.log(response.userData);
-        return response.json();
-    }).then(data=>console.log(data));
+    // fetch("https://jsonplaceholder.typicode.com/users").then(response=>{
+    //     // console.log(response.userData);
+    //     return response.json();
+    // }).then(data=>console.log(data));
+//axios
+axios.get('https://jsonplaceholder.typicode.com/users').then
+(res=>console.log(res.data));
+    
  }
 
  //post data to backend
@@ -167,9 +171,48 @@ then(data=>console.log(data));
 
  }
 
+getBtn.addEventListener("click",getData);
+postBtn.addEventListener("click",postData);
+
+ //------------------------put-delete-headers
+function deleteUser(){
+    // fetch("https://jsonplaceholder.typicode.com/users").then(response=>{
+    //     // console.log(response.userData);
+    //     return response.json();
+    // }).then(data=>console.log(data));
+//axios
+axios.get('https://jsonplaceholder.typicode.com/users/1').then
+(res=>console.log(res.data));
+    
+ }
+
+ //post data to backend
+
+ function putUser(){
+    //1.define data 
+    const userData = {
+        id:1,
+        name:"sajad",
+        username:"sajadssa",
+        email:"sajad@gmail.com",
+    }
+    const headers = {
+        headers:'authorization:'`${token}`
+    }
+
+    fetch("https://jsonplaceholder.typicode.com/users/1",
+    {method:"POST",
+body:JSON.stringify(userData),
+headers
+}).
+then((response)=>{return response.json()}).
+then(data=>console.log(data));
+   
 
 
- getBtn.addEventListener("click",getData);
- postBtn.addEventListener("click",postData);
+ }
+
+getBtn.addEventListener("click",deleteUser);
+postBtn.addEventListener("click",putUser);
 
  
