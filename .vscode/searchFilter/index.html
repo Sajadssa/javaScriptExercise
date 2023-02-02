@@ -29,53 +29,62 @@
         />
       </form>
       <div class="filter-box">
-        <a href="#shirt" class="btn">ALL</a>
-        <a href="#watch" class="btn">Watch</a>
-        <a href="#jwelary" class="btn">Shirt</a>
-        <a href="#gown" class="btn">Gown</a>
-        <a href="#jacket" class="btn">jewelry</a>
+        <a href="#shirt" class="btn" data-filter="">ALL</a>
+        <a href="#watch" class="btn" data-filter="watch">Watch</a>
+        <a href="#shirt" class="btn" data-filter="shirt">Shirt</a>
+        <a href="#gown" class="btn" data-filter="gown">Gown</a>
+        <a href="#jewelry" class="btn" data-filter="jewelry">jewelry</a>
       </div>
     </header>
 
     <main>
       <section class="product-center">
         <!-- single product -->
-        <div class="product">
+        
+        <!-- <div class="product">
           <div class="product-img">
             <img src="./assets/images/7.jpg" alt="Watch" />
           </div>
-          <div class="product-title">
-            <h4>Apple Watch</h4>
-          </div>
-          <div class="product-price">
-            <p>9901$</p>
+          <div class="product-desc">
+            <div class="product-title">
+              <h4>Apple Watch</h4>
+            </div>
+            <div class="product-price">
+              <p>1500$</p>
+            </div>
           </div>
         </div>
         <div class="product">
-          <div class="product-img">
-            <img src="./assets/images/8.jpg" alt="Watch" />
+          <json-server --watch db.jsondiv class="product-img">
+            <img src="./assets/images/10.jpg" alt="Watch" />
           </div>
-          <div class="product-title">
-            <h4>Apple Watch</h4>
-          </div>
-          <div class="product-price">
-            <p>1500$</p>
+          <div class="product-desc">
+            <div class="product-title">
+              <h4>Apple Watch</h4>
+            </div>
+            <div class="product-price">
+              <p>2100$</p>
+            </div>
           </div>
         </div>
         <div class="product">
           <div class="product-img">
             <img src="./assets/images/9.jpg" alt="Watch" />
           </div>
-          <div class="product-title">
-            <h4>Apple Watch</h4>
+          <div class="product-desc">
+            <div class="product-title">
+              <h4>Apple Watch</h4>
+            </div>
+            <div class="product-price">
+              <p>980$</p>
+            </div>
           </div>
-          <div class="product-price">
-            <p>1200$</p>
-          </div>
-        </div>
-
+        </div> -->
+       
       </section>
     </main>
+    <!--axios method cdnjs link  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
