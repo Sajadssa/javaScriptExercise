@@ -1,0 +1,56 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+    }
+    
+     :root {
+        --mainBlack: var(rgba(0, 0, 0, 0.3));
+        --bodyColor: var(rgba(255, 255, 255, .3));
+        --nav-width: 250px;
+    }
+    
+    body {
+        font-family: 'iranYekan';
+        color: var(--mainBlack);
+        background-color: var(--bodyColor);
+        direction: rtl;
+    }
+    
+    .main-layout {
+        display: flex;
+    }
+    
+    .nav {
+        height: 100vh;
+        width: var(--nav-width);
+        padding: .5rem;
+        position: sticky;
+        background-color: rgb(243, 243, 243);
+    }
+    
+    .nav li {
+        margin: 5px;
+    }
+    
+    .nav__link {
+        text-decoration: none;
+        color: var(--mainBlack);
+        display: block;
+        padding: 12px 8px;
+        transition: all 1s ease-out;
+    }
+    
+    .nav__link:hover {
+        background-color: #749cc2c4;
+        border-radius: 1rem;
+        width: auto;
+        color: #fff;
+    }
+    
+    #app {
+        height: 200vh;
+        padding: 1rem;
+    }
