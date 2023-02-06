@@ -28,8 +28,21 @@ function router() {
     }
     console.log(match.route.view());
 }
-
+function navigateTo(url){
+    history.pushState(null,null,url);
+    router();
+}
+// attach popstate to window when changes history browser
+window.addEventListener('popstate',router);
 document.addEventListener("DOMContentLoaded", () => {
+document.body.addEventListener("click",(e)=>{
+console.log(e.target);
+if(e.target.matches("[data-link]")){
+e.preventDefault();
+// console.log(e.target.href);
+navigateTo(e.target.href);
+}
 
+})
     router();
 });
