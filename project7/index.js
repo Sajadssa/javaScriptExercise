@@ -1,12 +1,15 @@
 //1. what view show to user based on routes:
 //create function that do it called name router
-function router() {
+import Dashboard from './pages/Dashboard.js';
+import Posts from './pages/Posts.js';
+import Products from './pages/Products.js';
+function router(params) {
     //store all routes in const routes
     //all routes:dashboard,posts,products
     const routes = [
-        { path: '/', view: () => console.log('dashboard page') },
-        { path: '/posts', view: () => console.log('posts page') },
-        { path: '/products', view: () => console.log('products page') },
+        { path: './project7', view: Dashboard },
+        { path: './posts', view: Posts },
+        { path: './products', view: Products },
 
     ];
 
@@ -26,7 +29,9 @@ function router() {
 
         }
     }
-    console.log(match.route.view());
+    // console.log(match.route.view());
+    // show page that which click user on the link
+    document.querySelector("#app").innerHTML=match.route.view();
 }
 function navigateTo(url){
     history.pushState(null,null,url);
