@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA With Vanilla js</title>
+    <link rel="stylesheet" href="/Clients/style.css" />
+    <!-- font-iranyekan -->
+    <link rel="stylesheet" href="/Clients/font.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- create nav -->
+    <div class="main-layout">
+      <nav class="nav mini-sidebar">
+        <div class="nav__logo">SPA</div>
+        <!-- ul>li*3>a.nav__link -->
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a href="/" class="nav__link" data-link>
+              <span class="icon-container">
+                <i class="far fa-user"></i>
+              </span>
+              <span class="nav__item-label">داشبورد</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="posts" class="nav__link" data-link>
+              <span class="icon-container">
+                <i class="fa-solid fa-blog"></i>
+              </span>
+              <span class="nav__item-label">پست ها</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="products" class="nav__link" data-link>
+              <span class="icon-container">
+                <i class="fa-brands fa-product-hunt"></i>
+              </span>
+              <span class="nav__item-label">محصولات</span>
+            </a>
+          </li>
+        </ul>
+        <div class="app-version">SPA v.1</div>
+      </nav>
+      <main id="app"></main>
+    </div>
+    <script src="/Clients/index.js" type="module"></script>
+  </body>
+</html>

@@ -3,13 +3,14 @@
 import Dashboard from './pages/Dashboard.js';
 import Posts from './pages/Posts.js';
 import Products from './pages/Products.js';
+import notFound from './pages/NotFound.js';
 function router(params) {
     //store all routes in const routes
     //all routes:dashboard,posts,products
     const routes = [
-        { path: './project7', view: Dashboard },
-        { path: './posts', view: Posts },
-        { path: './products', view: Products },
+        { path: '/', view:Dashboard },
+        { path: '/posts', view: Posts },
+        { path: '/products', view: Products },
 
     ];
 
@@ -24,7 +25,7 @@ function router(params) {
     let match = potionalRoutes.find((route) => route.isMatch);
     if (!match) {
         match = {
-            route: { path: '/not-found', view: () => console.log('not-found') },
+            route: { path: '/not-found', view:notFound },
             isMatch: true,
 
         }

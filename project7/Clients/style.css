@@ -1,0 +1,111 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+    }
+    
+     :root {
+        --mainBlack: var(rgba(0, 0, 0, 0.3));
+        --bodyColor: var(rgba(255, 255, 255, .3));
+        --nav-width: 250px;
+    }
+    
+    body {
+        font-family: 'iranYekan';
+        color: var(--mainBlack);
+        background-color: var(--bodyColor);
+        direction: rtl;
+    }
+    
+    .main-layout {
+        display: flex;
+    }
+    
+    .nav {
+        height: 100vh;
+        width: var(--nav-width);
+        padding: .5rem;
+        position: sticky;
+        background-color: rgba(8, 37, 61, 0.974);
+        border-radius: 100px 0 0 0;
+        background-color:linear-gradient(25deg,#05132f,#010611);
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+    }
+    
+     .nav__items {
+        flex-grow: 1;
+        margin: 5px;
+        overflow: auto;
+        color: rgb(85, 120, 121);
+    }
+    .nav__items::-webkit-scrollbar{
+        display: none;
+    }
+
+    .nav__logo{
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 3rem;
+        font-weight: 800;
+        border-bottom: 1px solid rgba(255,255,255,.2);
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+    }
+    
+    .nav__link {
+        text-decoration: none;
+        color: var(--mainBlack);
+        display: block;
+        padding: 12px 8px;
+        transition: all 1s ease-out;
+        display: flex;
+    }
+    
+    .nav__link:hover {
+        background-color: #749cc2c4;
+        border-radius: 1rem;
+        width: auto;
+        color: #fff;
+    }
+    .nav__item-label {
+        margin-right: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: hidden;
+    }
+    .icon-container {
+        font-size:1.2rem ;
+    }
+    .app-version{
+        color: #fff;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,.2);
+        font-size: 12px;
+    }
+    
+    #app {
+        height: 200vh;
+        padding: 3rem 2rem 0 0;
+        flex-grow: 1;
+    }
+    .nav.mini-sidebar:hover{
+        width: 70px;
+        overflow-x: hidden;
+        transition: all 1s ease-in-out;
+
+    }
+    .mini-sidebar .nav__link:hover{
+       
+        color: gold;
+        background-color: transparent;
+    }
+    .mini-sidebar .nav__logo{
+        font-size: 14px;
+    }
+    
