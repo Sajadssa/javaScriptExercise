@@ -52,3 +52,25 @@ navigateTo(e.target.href);
 })
     router();
 });
+
+// sidebar toggler
+
+//select an sidebarToggler
+const sidebarToggler=document.querySelector('.sidebar-toggler');
+const sidebar=document.querySelector('.nav');
+// select root in js
+const root=document.documentElement;
+// addEventListener click on chevron-right
+sidebarToggler.addEventListener('click',()=>{
+sidebar.classList.toggle('mini-sidebar');
+// control root property by js
+// when make class mini-sidebar is created
+if(sidebar.classList.contains('mini-sidebar')){
+   root.style.setProperty("--nav-width",70 +'px');
+}
+else{
+    root.style.setProperty("--nav-width",250+'px');
+}
+
+
+})
