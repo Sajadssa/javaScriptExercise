@@ -1,0 +1,25 @@
+{
+  "name": "javascriptexercise",
+  "version": "1.0.0",
+  "description": "Done Exercise JavaScript",
+  "main": "draft.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sajadssa/javaScriptExercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sajadssa/javaScriptExercise/issues"
+  },
+  "homepage": "https://github.com/Sajadssa/javaScriptExercise#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {}
+}

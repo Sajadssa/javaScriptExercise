@@ -73,7 +73,7 @@
     .nav__link:hover {
         background-color: #749cc2c4;
         border-radius: 1rem;
-        width: auto;
+        /* width: auto; */
         color: #fff;
     }
     .nav__item-label {
@@ -103,18 +103,13 @@
         flex-grow: 1;
     }
     
-    .nav.mini-sidebar{
-        /* width: 70px; */
-        overflow-x: hidden;
-        transition: all 1s ease-in-out;
-
-    }
-    .mini-sidebar .nav__link:hover{
+   
+   .mini-sidebar.nav .nav__link:hover{
        
         color: gold;
         background-color: transparent;
     }
-    .mini-sidebar .nav__logo{
+    .nav.mini-sidebar .nav__logo{
         font-size: 14px;
     }
    .nav.mini-sidebar .app-version__label{
