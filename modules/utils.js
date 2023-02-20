@@ -8,8 +8,8 @@ function fetchApi(){
 // module.exports.userName=userName;
 // module.exports.fetchApi=fetchApi;
 module.exports=fetchApi;
-module.exports={
-    userName,
-    fetchApi,
-}
+// module.exports={
+//     userName,
+//     fetchApi,
+// }
 // console.log(module);
