@@ -1,5 +1,5 @@
-const userName="sajad";
-function fetchApi(){
+export const userName="sajad";
+ export function fetchApi(){
     console.log('url successfully fetched...');
 }
 // export codes for use in anther files
@@ -7,7 +7,7 @@ function fetchApi(){
 
 // module.exports.userName=userName;
 // module.exports.fetchApi=fetchApi;
-module.exports=fetchApi;
+// module.exports=fetchApi;
 // module.exports={
 //     userName,
 //     fetchApi,
