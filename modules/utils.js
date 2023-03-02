@@ -1,5 +1,5 @@
 export const userName="sajad";
- export function fetchApi(){
+ export default function fetchApi(){
     console.log('url successfully fetched...');
 }
 // export codes for use in anther files

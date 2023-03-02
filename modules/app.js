@@ -1,5 +1,5 @@
 // add passfix 'js' to utils
-import {userName,fetchApi} from './utils.js';
+import fetchApi,{userName} from './utils.js';
 // const { userName } = require("./utils");
 // const utils = require('./utils');
 // // // console.log(utils.fetchApi);
@@ -10,3 +10,4 @@ import {userName,fetchApi} from './utils.js';
 console.log('hi js how is it going?');
 // call function after next export when import in app.js
 fetchApi();
+console.log(userName);
