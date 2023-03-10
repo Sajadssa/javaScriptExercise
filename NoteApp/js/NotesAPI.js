@@ -23,10 +23,11 @@ const notes = [
     },
 ];
 //define class for crud:create,read(get),update,delete
-class NotesAPI {
+// Export class NotesAPI
+ export default class NotesAPI {
     static getAllNotes() {
         // JSON.parse(localStorage.getItem("notes-app"))
-        const savedNotes = JSON.parse(localStorage.getItem("notes-app")) || [];
+        const savedNotes =notes || [];
         //    const savedNotes = JSON.parse(localStorage.getItem("note-app")) || [];
         return savedNotes.sort((a, b) => {
             return new Date(a.updated) > new Date(b.updated) ? -1 : 1
@@ -77,6 +78,6 @@ class NotesAPI {
 //     updated: "2023-03-03T15:26:12.566Z"
 // }
 // ));
-console.log(NotesAPI.getAllNotes());
+ console.log(NotesAPI.getAllNotes());
 console.log(NotesAPI.deleteNote(3));
 
