@@ -4,7 +4,7 @@ export default class NotesView {
   constructor(root,handlers) {
     // add property root to class NotesView
       this.root = root;
-      const { onNoteAdd,onNoteEdit } = handlers;
+      const { onNoteAdd,onNoteEdit,onSelect,onDelete } = handlers;
       this.onNoteAdd = onNoteAdd;
       this.onNoteEdit = onNoteEdit;
     // the root behaves is similar to an elements HTML that we select it on DOM
