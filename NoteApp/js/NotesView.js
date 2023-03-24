@@ -4,9 +4,12 @@ export default class NotesView {
   constructor(root,handlers) {
     // add property root to class NotesView
       this.root = root;
-      const { onNoteAdd,onNoteEdit,onSelect,onDelete } = handlers;
+    const { onNoteAdd, onNoteEdit, onSelect, onDelete, onNoteSelect } = handlers;
+    // attach methods to class NotesView
+    this.onNoteSelect = onNoteSelect;
       this.onNoteAdd = onNoteAdd;
-      this.onNoteEdit = onNoteEdit;
+    this.onNoteEdit = onNoteEdit;
+    
     // the root behaves is similar to an elements HTML that we select it on DOM
       
     // so root is element and we add to innerHTML property belong to root(app) that div is consider some element for make view trough dynamic by js
@@ -54,10 +57,10 @@ export default class NotesView {
           
 
   }
-  _creatListItemHTML(id, title, body, updated) {
+  _createListItemHTML(id, title, body, updated) {
     const MAX_BODY_LENGTH = 50;
     return `
-       <div class="notes__list-item " data-node-id=${id}>
+       <div class="notes__list-item " data-note-Id=${id}>
         <div class="notes__small-title">${title}</div>
         <div class="notes__small-body">
         ${body.substr(0, MAX_BODY_LENGTH)}
@@ -71,6 +74,36 @@ export default class NotesView {
     </div>
     
     `
+    
+  }
+
+  updateNoteList(notes) {
+    // select notes__list from root(Dom)
+    const notesContainer = this.root.querySelector('.notes__list');
+    // empty note list
+    notesContainer.innerHTML = "";
+    // define empty string
+    let notesList = "";
+    // iterate over notes array and create html for each note
+    for (const note of notes) {
+      // object destructuring for access to  input parameters 
+      const { id, title, body, updated } = note;
+      // passing note to creatlistitemHTML Method for create html tags
+      const html = this._createListItemHTML(id, title, body, updated);
+      // adding html with notesList
+      notesList += html;
+      
+    }
+    notesContainer.innerHTML = notesList;
+    notesContainer.querySelectorAll('.notes__list-item').forEach((noteItem) => {
+      // set click event on each noteItem
+      noteItem.addEventListener("click", () => {
+        // get id of noteItem
+        this.onNoteSelect(noteItem.dataset.noteId);
+
+      })
+    })
+
     
   }
 }

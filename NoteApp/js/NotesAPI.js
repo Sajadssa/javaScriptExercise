@@ -4,14 +4,14 @@ const notes = [
         id: 1,
         title: "first title",
         body: "the first note",
-        updated: "2023-03-01T15:26:12.566Z"
+        updated: "2023-03-14T15:26:12.566Z"
 
     },
     {
         id: 2,
         title: "second title",
         body: "the second note",
-        updated: "2023-03-02T15:16:12.566Z"
+        updated: "2023-03-13T15:16:12.566Z"
 
     },
     {

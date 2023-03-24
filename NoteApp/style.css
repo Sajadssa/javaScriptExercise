@@ -69,6 +69,7 @@ body {
   text-align: center;
   color: rgb(85, 120, 121);
  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+ cursor: pointer;
 
   
 }

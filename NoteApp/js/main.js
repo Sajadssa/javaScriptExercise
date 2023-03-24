@@ -11,6 +11,11 @@ const view = new NotesView(app, {
     },
     onNoteEdit(newTitle, newBody) {
         console.log(newTitle, newBody);
-    }
+    }, onNoteSelect(noteId) {
+        console.log('note id', noteId);
+    },
 });
+// show note in updateNoteList method
+// we passed object or method to view
+view.updateNoteList(NotesAPI.getAllNotes());
 // console.log(NotesAPI.getAllNotes());
