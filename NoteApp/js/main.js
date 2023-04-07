@@ -14,6 +14,10 @@ const view = new NotesView(app, {
     }, onNoteSelect(noteId) {
         console.log('note id', noteId);
     },
+    onNoteDelete(noteId) { 
+
+        console.log('note id for delete', noteId);
+    }
 });
 // show note in updateNoteList method
 // we passed object or method to view

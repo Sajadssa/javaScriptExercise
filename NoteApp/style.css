@@ -15,7 +15,7 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: rgba(45, 129, 134, 0.711);
   line-height: 1.5;
-  font-size: 15px;
+  font-size: 13px;
   position: sticky;
   background-color: rgba(8, 37, 61, 0.974);
   border-radius: 100px 0 0 0;
@@ -60,6 +60,7 @@ body {
   font-size: 0.95rem;
   flex-grow: 1;
   overflow-y: auto;
+
 
 }
 .notes__list::-webkit-scrollbar{
@@ -125,6 +126,24 @@ body {
   background-color: #fffffff5;
   border-radius: 7px;
   margin-top: 1.1rem;
+}
+.notes__item-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.notes__list_trash{
+  width: 35px;
+  height: 35px;
+   background-color: #fff;
+   border-radius: 100%;
+  color:rgba(159, 42, 42, 0.779);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
 }
 .notes__preview .notes__body {
 

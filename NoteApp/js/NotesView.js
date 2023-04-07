@@ -4,11 +4,12 @@ export default class NotesView {
   constructor(root,handlers) {
     // add property root to class NotesView
       this.root = root;
-    const { onNoteAdd, onNoteEdit, onSelect, onDelete, onNoteSelect } = handlers;
+    const { onNoteAdd, onNoteEdit, onSelect, onDelete, onNoteSelect,onNoteDelete } = handlers;
     // attach methods to class NotesView
     this.onNoteSelect = onNoteSelect;
       this.onNoteAdd = onNoteAdd;
     this.onNoteEdit = onNoteEdit;
+    this.onNoteDelete = onNoteDelete;
     
     // the root behaves is similar to an elements HTML that we select it on DOM
       
@@ -61,7 +62,11 @@ export default class NotesView {
     const MAX_BODY_LENGTH = 50;
     return `
        <div class="notes__list-item " data-note-Id=${id}>
-        <div class="notes__small-title">${title}</div>
+       <div class="notes__item-header">
+          <div class="notes__small-title">${title}</div>
+        <span class="notes__list-trash" data-note-Id=${id}>
+        <i class="fa-regular fa-trash-can"></i></span>
+       </div>
         <div class="notes__small-body">
         ${body.substr(0, MAX_BODY_LENGTH)}
         ${body.length  > MAX_BODY_LENGTH ?"...":""}
@@ -103,7 +108,10 @@ export default class NotesView {
 
       })
     })
-
+// select an all note list trash and loop over them
+    notesContainer.querySelectorAll('.notes__list-trash').forEach((noteItem) => {
+      noteItem.addEventListener('click', this.onNoteDelete(noteItem.dataset.noteId));
+    })
     
   }
 }
