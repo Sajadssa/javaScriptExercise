@@ -12,6 +12,10 @@ const view = new NotesView(app, {
     onNoteEdit(newTitle, newBody) {
         console.log(newTitle, newBody);
     }, onNoteSelect(noteId) {
+        //when user select note=>1.add css class modifier to it,title and body in left side shall be update
+        //view.updateActiveNote(note)
+
+
         console.log('note id', noteId);
     },
     onNoteDelete(noteId) { 
@@ -22,4 +26,5 @@ const view = new NotesView(app, {
 // show note in updateNoteList method
 // we passed object or method to view
 view.updateNoteList(NotesAPI.getAllNotes());
+view.updateActiveNote(NotesAPI.getAllNotes()[0]);
 // console.log(NotesAPI.getAllNotes());

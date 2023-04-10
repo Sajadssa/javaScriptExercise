@@ -71,7 +71,8 @@ body {
   color: rgb(85, 120, 121);
  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
  cursor: pointer;
-
+ width: 170px;
+overflow: hidden;
   
 }
 .notes__small-title {
@@ -92,6 +93,8 @@ body {
   color: grey;
 
   font-weight: bold;
+ 
+ 
 
 }
 .notes__add {
@@ -133,7 +136,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
-.notes__list_trash{
+.notes__list_trash  {
   width: 35px;
   height: 35px;
    background-color: #fff;
@@ -144,6 +147,9 @@ body {
   align-items: center;
  
 
+}
+.fa-regular{
+   color:rgba(159, 42, 42, 0.779);
 }
 .notes__preview .notes__body {
 

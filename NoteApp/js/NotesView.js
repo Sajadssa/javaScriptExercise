@@ -103,15 +103,31 @@ export default class NotesView {
     notesContainer.querySelectorAll('.notes__list-item').forEach((noteItem) => {
       // set click event on each noteItem
       noteItem.addEventListener("click", () => {
+        
         // get id of noteItem
         this.onNoteSelect(noteItem.dataset.noteId);
 
       })
     })
-// select an all note list trash and loop over them
+    // select an all note list trash and loop over them
     notesContainer.querySelectorAll('.notes__list-trash').forEach((noteItem) => {
-      noteItem.addEventListener('click', this.onNoteDelete(noteItem.dataset.noteId));
-    })
+      noteItem.addEventListener('click', (e) => {
+        //stop propagation
+        e.stopPropagation();
+        this.onNoteDelete(noteItem.dataset.noteId);
+        
+      });
     
+    })
+  };
+
+  updateActiveNote(note) {
+    this.root.querySelector(".notes__title").value = note.title;
+    this.root.querySelector(".notes__body").value = note.body;
+    // add selected class css to note selected:
+    // remove all note selected before that have selected class css modifier
+    this.root.querySelectorAll(".notes__list-item").forEach(item => item.classList.remove("notes__list-item-selected"));
+    this.root.querySelector(`.notes__list-item[data-note-id="${note.id}"]`).classList.add("notes__list-item--selected");
+
   }
 }
