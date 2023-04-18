@@ -27,7 +27,7 @@ export default class NotesView {
 </div>
 <div class="notes__preview">
     <input type="text" class="notes__title" placeholder="note title...">
-    <textarea  name="" class="notes__body" id="" >Take note</textarea>
+    <textarea  name="" class="notes__body"  >Take note</textarea>
 </div>
     `;
       
@@ -45,19 +45,24 @@ export default class NotesView {
       });
     //   attach eventlistener for input and textarea
       //there are an  two arrays so we can use forEach method to iterate over an members of array
-      [inputTitle, inputBody].forEach((inputFelid) => {
-          inputFelid.addEventListener("blur", () => {
-            //   check inputTitle and inputBody
-            //   remove whitecapping from start and end of strings
-              const newTitle = inputTitle.value.trim();
-              const newBody = inputBody.value.trim();
-              this.onNoteEdit(newTitle, newBody);
+    [inputTitle, inputBody].forEach((inputFelid) => {
+      inputFelid.addEventListener("blur", () => {
+        //   check inputTitle and inputBody
+        //   remove whitecapping from start and end of strings
+        const newTitle = inputTitle.value.trim();
+        const newBody = inputBody.value.trim();
+        this.onNoteEdit(newTitle, newBody);
               
-          })
       })
-          
+    });
+          // hides notes preview in first loading
+
+    this.updateNotePreviewVisibility(false);
 
   }
+
+
+
   _createListItemHTML(id, title, body, updated) {
     const MAX_BODY_LENGTH = 50;
     return `
@@ -129,5 +134,10 @@ export default class NotesView {
     this.root.querySelectorAll(".notes__list-item").forEach(item => item.classList.remove("notes__list-item-selected"));
     this.root.querySelector(`.notes__list-item[data-note-id="${note.id}"]`).classList.add("notes__list-item--selected");
 
+  }
+// this method clear all notes when loading application
+  updateNotePreviewVisibility(visible) {
+    this.root.querySelector(".notes__preview").style.visible=visible ?"visible":"hidden";
+    
   }
 }
