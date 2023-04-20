@@ -131,13 +131,13 @@ export default class NotesView {
     this.root.querySelector(".notes__body").value = note.body;
     // add selected class css to note selected:
     // remove all note selected before that have selected class css modifier
-    this.root.querySelectorAll(".notes__list-item").forEach(item => item.classList.remove("notes__list-item-selected"));
+    this.root.querySelectorAll(".notes__list-item").forEach((item) => item.classList.remove("notes__list-item--selected"));
     this.root.querySelector(`.notes__list-item[data-note-id="${note.id}"]`).classList.add("notes__list-item--selected");
 
   }
 // this method clear all notes when loading application
   updateNotePreviewVisibility(visible) {
-    this.root.querySelector(".notes__preview").style.visible=visible ?"visible":"hidden";
+    this.root.querySelector(".notes__preview").style.visibility=visible ? "visible":"hidden";
     
   }
 }
