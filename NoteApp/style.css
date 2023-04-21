@@ -93,7 +93,11 @@ overflow: hidden;
   color: grey;
 
   font-weight: bold;
- 
+ backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(100%);
+    background-color: rgba(2, 13, 35, 0.75);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
  
 
 }
@@ -119,6 +123,7 @@ overflow: hidden;
   flex-direction: column;
  
   flex-grow: 1;
+  
 }
 .notes__preview .notes__title {
   width: 80vw;
@@ -129,6 +134,7 @@ overflow: hidden;
   background-color: #fffffff5;
   border-radius: 7px;
   margin-top: 1.1rem;
+  
 }
 .notes__item-header{
   display: flex;

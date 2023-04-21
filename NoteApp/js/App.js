@@ -37,6 +37,15 @@ export default class App {
     return {
       onNoteAdd: () => {
         console.log("Note has been added");
+        const newNote = {
+          title: "New Note",
+          body:"this is new......."
+        }
+        // we taken note and shall be save
+        NotesAPI.saveNotes(newNote);
+        this._refreshNotes();
+
+
       },
       onNoteEdit: (newTitle, newBody) => {
         console.log(newTitle, newBody);
