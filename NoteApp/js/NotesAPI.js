@@ -1,21 +1,21 @@
 //define notes saved before in local storage
 const notes = [
     {
-        id: 1,
+        id: "1",
         title: "first title",
         body: "the first note",
         updated: "2023-03-14T15:26:12.566Z"
 
     },
     {
-        id: 2,
+        id: "2",
         title: "second title",
         body: "the second note",
         updated: "2023-03-13T15:16:12.566Z"
 
     },
     {
-        id: 3,
+        id: "3",
         title: "third title",
         body: "the third note",
         updated: "2023-03-03T13:42:56.541Z"
@@ -61,16 +61,20 @@ const notes = [
 
 
     }
-    // delete note
-    static deleteNote(id) {
-        const notes = NotesAPI.getAllNotes();
-        const filterNote = notes.filter(n => n.id !== id);
+     static deleteNote(id) {
         
-        // update local storage
-        localStorage.setItem('notes-app', JSON.stringify(filterNote));
-    }
+         const notes = NotesAPI.getAllNotes();
+         const filterNote = notes.filter(n => n.id !==id);
+         console.log(filterNote); // Check the value of filterNote
 
+         // update local storage
+         localStorage.setItem('notes-app', JSON.stringify(filterNote));
+     }
+
+
+  
 }
+
 // console.log(NotesAPI.saveNotes({
 //     id: 1,
 //     title: "first title-edited",
@@ -79,5 +83,5 @@ const notes = [
 // }
 // ));
  console.log(NotesAPI.getAllNotes());
-console.log(NotesAPI.deleteNote(3));
+// console.log(NotesAPI.deleteNote(3));
 

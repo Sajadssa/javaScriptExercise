@@ -121,6 +121,8 @@ export default class NotesView {
         e.stopPropagation();
         this.onNoteDelete(noteItem.dataset.noteId);
         
+       
+        
       });
     
     })

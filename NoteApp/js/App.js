@@ -20,16 +20,26 @@ export default class App {
     //get all notes first
     const notes = NotesAPI.getAllNotes();
     // fill empty array with notes in constructor method
+    this._setNotes(notes);
+   //SET ACTIVE NOTE:
+    if(notes.length>0)
+    this._setActiveNote(notes[0]);
+  }
+
+  _setNotes(notes) {
     // SET NOTES:
     this.notes = notes;
     // for show note list in right panel
     this.view.updateNoteList(notes);
     // for show title and body  notes preview
     this.view.updateNotePreviewVisibility(notes.length > 0);
-    //SET ACTIVE NOTE:
+  }
+
+  _setActiveNote(note) {
+    
     // recognize which is note that's active
-    this.activeNote = notes[0];
-    this.view.updateActiveNote(notes[0]);
+    this.activeNote = note=note;
+    this.view.updateActiveNote(note);
     //
   }
 
@@ -39,16 +49,20 @@ export default class App {
         console.log("Note has been added");
         const newNote = {
           title: "New Note",
-          body:"this is new......."
-        }
+          body: "this is new.......",
+        };
         // we taken note and shall be save
         NotesAPI.saveNotes(newNote);
         this._refreshNotes();
-
-
       },
       onNoteEdit: (newTitle, newBody) => {
-        console.log(newTitle, newBody);
+        // console.log(newTitle, newBody);
+        NotesAPI.saveNotes({
+          id: this.activeNote.id,
+          title: newTitle,
+          body: newBody,
+        });
+        this._refreshNotes();
       },
 
       onNoteSelect: (noteId) => {
@@ -60,11 +74,14 @@ export default class App {
         // FIND note id with FIND METHOD
 
         const selectedNote = this.notes.find((n) => n.id == noteId);
-        this.activeNote = selectedNote;
-        this.view.updateActiveNote(selectedNote);
+        // this.activeNote = selectedNote;
+        // this.view.updateActiveNote(selectedNote);
+        this._setActiveNote(selectedNote);
       },
       onNoteDelete: (noteId) => {
-        console.log("note id for delete", noteId);
+        // console.log("note id for delete", noteId);
+        NotesAPI.deleteNote(noteId);
+        this._refreshNotes();
       },
     };
   }
