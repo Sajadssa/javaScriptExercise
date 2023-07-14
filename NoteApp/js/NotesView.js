@@ -4,7 +4,7 @@ export default class NotesView {
   constructor(root,handlers) {
     // add property root to class NotesView
       this.root = root;
-    const { onNoteAdd, onNoteEdit, onSelect, onDelete, onNoteSelect,onNoteDelete } = handlers;
+    const { onNoteAdd, onNoteEdit, onNoteSelect,onNoteDelete } = handlers;
     // attach methods to class NotesView
     this.onNoteSelect = onNoteSelect;
       this.onNoteAdd = onNoteAdd;
@@ -66,10 +66,10 @@ export default class NotesView {
   _createListItemHTML(id, title, body, updated) {
     const MAX_BODY_LENGTH = 50;
     return `
-       <div class="notes__list-item " data-note-Id=${id}>
+       <div class="notes__list-item " data-note-Id="${id}">
        <div class="notes__item-header">
           <div class="notes__small-title">${title}</div>
-        <span class="notes__list-trash" data-note-Id=${id}>
+        <span class="notes__list-trash" data-note-Id="${id}">
         <i class="fa-regular fa-trash-can"></i></span>
        </div>
         <div class="notes__small-body">

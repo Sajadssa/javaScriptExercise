@@ -79,7 +79,7 @@ export default class App {
         this._setActiveNote(selectedNote);
       },
       onNoteDelete: (noteId) => {
-        // console.log("note id for delete", noteId);
+         console.log("note id for delete", noteId);
         NotesAPI.deleteNote(noteId);
         this._refreshNotes();
       },
