@@ -655,9 +655,9 @@ function editInPlace() {
 console.log(s);
 //show arrow function
 var magic = () => {
-        return new date();
-    }
-    //arrow function
+    return new date();
+}
+//arrow function
 var m = (arr1, arr2) => arr1.concat(arr2);
 console.log(m([1, 2], [3, 4, 5]));
 //arrow function with filter syntax
@@ -711,21 +711,21 @@ var filtered = [112, -52, 0, -1, 944].filter(isPositive);
 
 let scores = [12, 90, 14, 72, 89, 51];
 
-scores.map(function() {
+scores.map(function () {
     console.log("SabzLearn");
 });
 
-scores.filter(function() {
+scores.filter(function () {
     console.log("SabzLearn");
 });
 
 let scoress = [12, 90, 14, 72, 89, 51];
 
-scoress.map(function(score) {
+scoress.map(function (score) {
     console.log(score); // 12 90 14 72 89 51
 });
 
-scores.filter(function(score) {
+scores.filter(function (score) {
     console.log(score); // // 12 90 14 72 89 51
 });
 //با این کد تک تک ایتم های ارایه در2 ضرب میشوند بوسیله تابع map
@@ -733,7 +733,7 @@ scores.filter(function(score) {
 //map  همان عمل قاچ کردن اندیس ها یا ایتم های آرایه هاست
 let a = [12, 90, 14, 72, 89, 51]
 
-let doubleNumbers = a.map(function(a) {
+let doubleNumbers = a.map(function (a) {
     return a * 2
 })
 
@@ -741,7 +741,7 @@ console.log(doubleNumbers) // [24, 180, 28, 144, 178, 102]
 
 let b = [12, 90, 14, 72, 89, 51]
 
-let filteredScores = b.filter(function(b) {
+let filteredScores = b.filter(function (b) {
     return b > 75
 })
 
@@ -749,13 +749,13 @@ console.log(filteredScores) // [90, 89]
 
 let fruits = ['🍎', '🍌', '🍈', '🍉', '🌶️', '🍊']
 
-let filteredData = fruits.filter(function(fruit) {
+let filteredData = fruits.filter((fruit)=> {
     return fruit === "🍉";
 })
 
-console.log(filteredData) // ['🍉']
+console.log(filteredData); // ['🍉']
 document.getElementById("mytxt").innerHTML = filteredData;
-const sum = function() {
+const sum = function () {
     return function sum(...args) {
 
         return args.reduce((a, b) => a + b);
@@ -764,3 +764,17 @@ const sum = function() {
 
 console.log(sum(1, 2, 3, 4, 5));
 
+const sa = "sajadgggggززggggبیdfبیبffdddgggdfddsdff";
+console.log(sa);
+
+const numd = 1;
+console.log(numd);
+
+const set = new Set();
+set.add(5);
+set.add('hello');
+set.add({ name: 'ss' });
+for (let item of set)
+{
+    console.log(item + 6)
+};
