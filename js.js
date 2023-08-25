@@ -1,15 +1,17 @@
 //  // Setup
-//  var myArray = [
-//      [1, 2, 3],
-//      [4, 5, 6],
-//      [7, 8, 9],
-//      [
-//          [10, 11, 12], 13, 14
-//      ]
-//  ];
-//  // Only change code below this line.
-//  //  var myData = myArray[2][1];
-//  var mydata = myArray[3][0][2]; // Example
+ var myArray = [
+     [1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9],
+     [
+         [10, 11, 12], 13, 14
+     ]
+ ];
+ var myData = myArray[3][0][2];
+ console.log(myData);
+ // Only change code below this line.
+ //  var myData = myArray[2][1];
+ // Example
 // Example
 // var ourArray = ["Stimpson", "J", "cat"];
 // ourArray.push(["happy", "joy"]);
@@ -335,9 +337,9 @@
 // dot notation
 // let user = { name: "sajad", age: 34, height: 1.78, weight: 75 };
 // document.getElementById("mytxt").innerHTML = user.height;
-// // bracket notation
+// bracket notation
 // document.getElementById("mytxt").innerHTML = user["height"]
-//     // add property to an object
+//     add property to an object
 // user["email"] = "sajadsaeediazad0007@gmail.com"
 // document.getElementById("mytxt").innerHTML = user.email;
 // document.getElementById("mytxt").innerHTML = user;
@@ -346,7 +348,7 @@
 // delete user.email;
 // document.getElementById("mytxt").innerHTML = user.email;
 // use object for lookups value example dictionary
-// //replace object with switch statement
+// replace object with switch statement
 // function phoneticLookup(val) {
 //     var result = "";
 //     switch (val) {
@@ -430,7 +432,7 @@
 //         formats: ["CD", "8T", "LP"],
 //         gold: true
 //     }
-//     // Add record here
+  // Add record here
 // ];
 // document.getElementById("mytxt").innerHTML = myMusic;
 // var myStorage = {
@@ -444,7 +446,7 @@
 //         }
 //     }
 // };
-// // define variable for better understand concept here variable is gloveBoxContents. for show result we use of variable
+// define variable for better understand concept here variable is gloveBoxContents. for show result we use of variable
 // var gloveBoxContents = myStorage.car.inside["glove box"]; // Chan
 // document.getElementById("mytxt").innerHTML = myStorage.car.inside["glove box"];
 // console.log(gloveBoxContents);
@@ -778,3 +780,14 @@ for (let item of set)
 {
     console.log(item + 6)
 };
+let x=3;
+function test(){
+    var x=5;
+    if (true) {
+        var x = 7;
+        console.log(x);
+    }
+  
+    console.log(x);
+}
+test();
