@@ -791,3 +791,27 @@ function test(){
     console.log(x);
 }
 test();
+
+const numbers = [1, 2, 3, 4, 5];
+var result = 0;
+const maps = numbers.map((num) => {
+    result += num * 2;
+});
+console.log(result);
+const products={
+    name:'socks',
+    price:10,
+    mark: 'tommy',
+    rating: {
+        stars: 4.5,
+        count:98
+    },
+    fun: function fInsideObject() {
+    console.log('function inside object');
+        
+    }
+}
+console.log(products.rating.stars);
+
+
+
