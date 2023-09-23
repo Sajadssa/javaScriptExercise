@@ -749,14 +749,24 @@ let filteredScores = b.filter(function (b) {
 
 console.log(filteredScores) // [90, 89]
 
-let fruits = ['🍎', '🍌', '🍈', '🍉', '🌶️', '🍊']
+let fruits = ['🍎', '🍌', '🍈', '🍉', '🌶️', '🍊'];
+let filteredData = fruits.filter((fruit) => {
+    return fruit !== "🍉";
+});
+let watermelons = new Array(4).fill('🍉');
+let results = filteredData.concat(watermelons);
+document.getElementById("mytxt").innerHTML = results;
 
-let filteredData = fruits.filter((fruit)=> {
-    return fruit === "🍉";
-})
+//What is an output?
+// 1) 🍎,🍌,🍈,🍉,🌶️,🍊
 
-console.log(filteredData); // ['🍉']
-document.getElementById("mytxt").innerHTML = filteredData;
+// 2)🍌,🍌,🍌,🍈,🍈,🌶️,🌶️
+
+// 3)🍉,🍈,🌶️,🍊,🍊,🍊,🍉
+
+// 4)🍎,🍌,🍈,🌶️,🍊,🍉,🍉,🍉,🍉
+
+document.getElementById("mytxt").innerHTML = newObject;
 const sum = function () {
     return function sum(...args) {
 
