@@ -679,8 +679,11 @@ function isInRange(value) {
     }
     return value >= this.lower && value <= this.upper;
 }
-
-let data = [10, 20, "30", 1, 5, 'JavaScript filter', undefined, 'example'];
+let data =
+    [10, 20, "30", 1, "5",
+        'JavaScript filter',
+        undefined,
+        'sajad'];
 
 let range = {
     lower: 1,
@@ -688,8 +691,8 @@ let range = {
 };
 
 let numberInRange = data.filter(isInRange, range);
-
 console.log(numberInRange); // [10, 1, 5]
+
 // document.getElementById("mytxt").innerHTML = data.filter(isInRange, range);
 // JavaScript to illustrate findIndex() method
 function canVote(age) {
@@ -773,6 +776,7 @@ const sum = function () {
         return args.reduce((a, b) => a + b);
     };
 }();
+//javascript tutotrial by sajad saeedi azad enginner electrial power
 
 console.log(sum(1, 2, 3, 4, 5));
 
