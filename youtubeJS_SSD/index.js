@@ -1,4 +1,5 @@
 //json:javascript object notation
+
 //this is json file in below
 const jsObject={
     name:'shirt',
@@ -36,3 +37,19 @@ console.log(typeof jsObject2);
 'JSON.parse(jsonString)'
 {name:'shirt', 'delivery-time': '1 day', rating: { starts: 4.5, count: 87 }, fun: function function1 () { console.log('function inside object'); } } */
 //next BUILT-in object localStorage:SAVE VALUES MORE PERMANENTLY
+//localstorage?
+//localStorage.setItem('key', 'value');
+//localstorage only support string values
+/*// ذخیره نام کاربر در localStorage
+localStorage.setItem('username', 'johndoe');
+
+// بازیابی نام کاربر از localStorage
+const username = localStorage.getItem('username');
+
+// حذف نام کاربر از localStorage
+localStorage.removeItem('username');
+ */
+
+localStorage.setItem('NameIN','sajadSS');
+// console.log(localStorage);
+console.log(localStorage.getItem('NameIN'));
